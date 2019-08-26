@@ -4,8 +4,8 @@
       <div class="flex-grow">
         <h1 class="text-gray-600 text-lg">📸 Nueva Notificación</h1>
         <h2 class="mt-3 text-gray-300">
-          🔔 Crea tus propias notificaciones personalizadas! Solo tienes que
-          cambiar el texto pulsando sobre la notificación
+          🔔 Solo tienes que pulsar sobre la notificacion para cambiar el texto
+          o sobre la parte inferior del fondo para cambiarlo
         </h2>
         <mobile-screen>
           <datetime />

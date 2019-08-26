@@ -1,20 +1,17 @@
 <template>
-  <transition>
-    <div
-      class="background bg-cover bg-gray-500 mt-10 h-500 rounded"
-      :style="inlineStyles"
-    >
-      <div class="relative" style="top: 100%">
-        <div
-          class="max-w-md w-20 h-52 absolute bg-transparent bottom-0 rounded"
-          :class="background.disabled ? 'cursor-auto' : 'cursor-pointer'"
-          style="width: calc(100%)"
-          @click="changeBackground"
-        />
-      </div>
-      <slot />
+  <div
+    class="background bg-cover bg-gray-500 mt-10 h-500 rounded"
+    :style="inlineStyles"
+  >
+    <div class="relative" style="top: 100%">
+      <div
+        class="max-w-md w-full h-52 absolute bg-transparent bottom-0 rounded"
+        :class="background.disabled ? 'cursor-auto' : 'cursor-pointer'"
+        @click="changeBackground"
+      />
     </div>
-  </transition>
+    <slot />
+  </div>
 </template>
 <script>
 import ColorThief from 'colorthief/dist/color-thief.umd'
@@ -29,7 +26,8 @@ export default {
         image: '',
         color: '',
         disabled: false
-      }
+      },
+      unsplash: ''
     }
   },
 
@@ -58,12 +56,12 @@ export default {
       if (this.background.disabled) return
 
       this.background.disabled = true
-      this.getColors()
       this.background.image = this.unsplashUrl()
+      this.getColors()
 
       setTimeout(() => {
         this.background.disabled = false
-      }, 1500)
+      }, 3000)
     },
 
     getColors() {
@@ -76,7 +74,7 @@ export default {
       })
 
       img.crossOrigin = 'Anonymous'
-      img.src = this.unsplashUrl()
+      img.src = this.background.image
     }
   }
 }
