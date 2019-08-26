@@ -2,10 +2,10 @@
   <div class="pattern">
     <div class="container flex flex-col max-w-md min-h-screen text-white p-6">
       <div class="flex-grow">
-        <h1 class="text-gray-600 text-lg">📸 Notifications capture</h1>
+        <h1 class="text-gray-600 text-lg">📸 Nueva Notificación</h1>
         <h2 class="mt-3 text-gray-300">
-          🔔 Create custom meme notifications just by tapping on the sections
-          you want to change
+          🔔 Crea tus propias notificaciones personalizadas! Solo tienes que
+          cambiar el texto pulsando sobre la notificación
         </h2>
         <mobile-screen>
           <datetime />
@@ -17,7 +17,7 @@
 
       <div>
         <span class="text-gray-300">
-          ✏️️ Made by
+          ✏️️ Hecho por
           <a
             href="https://twitter.com/pepeloper_"
             class="text-orange-500"
