@@ -1,5 +1,8 @@
 <template>
-  <div class="notification w-full bg-gray-400 min-h-65 rounded px-4 py-2">
+  <div
+    class="notification w-full bg-gray-400 min-h-65 rounded px-4 py-2"
+    @click="focusNotification"
+  >
     <div class="flex justify-between">
       <div class="flex items-center">
         <span class="whatsapp"></span>
@@ -13,9 +16,13 @@
     </div>
     <div class="flex flex-col">
       <span class="font-bold text-black text-sm">.</span>
-      <span class="text-gray-500 text-sm">
-        Te he hecho croquetas
-      </span>
+      <input
+        ref="notification"
+        type="text"
+        class="text-gray-500 placeholder-gray-500 text-sm bg-transparent outline-none"
+        :value="text"
+        :placeholder="placeholder"
+      />
     </div>
   </div>
 </template>
@@ -23,14 +30,19 @@
 export default {
   name: 'Notification',
 
-  props: {},
-
   data() {
-    return {}
+    return {
+      text: '',
+      placeholder: 'Te he hecho croquetas'
+    }
   },
 
   computed: {},
 
-  methods: {}
+  methods: {
+    focusNotification() {
+      this.$refs.notification.focus()
+    }
+  }
 }
 </script>
