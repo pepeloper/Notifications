@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center pt-12">
     <span class="text-white text-xl">{{ time }}</span>
-    <span class="text-white text-lg -mt-5">Domingo, 25 de agosto</span>
+    <span class="text-white text-lg -mt-5">{{ day }}</span>
   </div>
 </template>
 <script>
@@ -17,7 +17,8 @@ export default {
   computed: {
     time() {
       const minutes = String(this.date.getMinutes()).padStart(2, '0')
-      return `${this.date.getHours()}:${minutes}`
+      const hour = this.date.getHours()
+      return `${hour}:${minutes}`
     },
 
     day() {

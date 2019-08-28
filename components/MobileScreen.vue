@@ -3,10 +3,14 @@
     class="background bg-cover bg-gray-500 mt-10 h-500 rounded"
     :style="inlineStyles"
   >
-    <div class="relative" style="top: 100%">
+    <div
+      v-if="!background.disabled"
+      id="background-zone"
+      class="relative"
+      style="top: 100%"
+    >
       <div
-        class="max-w-md w-full h-52 absolute bg-transparent bottom-0 rounded"
-        :class="background.disabled ? 'cursor-auto' : 'cursor-pointer'"
+        class="max-w-md w-full h-52 absolute bg-transparent bottom-0 rounded cursor-pointer"
         @click="changeBackground"
       />
     </div>
@@ -26,8 +30,7 @@ export default {
         image: '',
         color: '',
         disabled: false
-      },
-      unsplash: ''
+      }
     }
   },
 

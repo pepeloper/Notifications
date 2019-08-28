@@ -37,8 +37,6 @@ export default {
     }
   },
 
-  computed: {},
-
   methods: {
     focusNotification() {
       this.$refs.notification.focus()
