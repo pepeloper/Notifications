@@ -56,8 +56,6 @@ export default {
     },
 
     changeBackground() {
-      if (this.background.disabled) return
-
       this.background.disabled = true
       this.background.image = this.unsplashUrl()
       this.getColors()
